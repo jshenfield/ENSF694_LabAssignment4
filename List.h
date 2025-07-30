@@ -16,6 +16,7 @@ public:
     void printList() const;
     int getSize() const; // Number of nodes in the list
     bool isEmpty() const;
+    Node* getHead() const { return head; }
 };
 
 #endif

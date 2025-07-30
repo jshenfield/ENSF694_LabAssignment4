@@ -59,11 +59,11 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    ifstream fin("input.txt");
-    if (!fin) {
-        cerr << "Error: cannot open file " << argv[1] << endl;
-        return 1;
-    }
+    //ifstream fin("input.txt");
+    //if (!fin) {
+    //    cerr << "Error: cannot open file " << argv[1] << endl;
+    //    return 1;
+    //}
     // Read flight records from the input file.
     vector<Flight> flights;
     read_flight_info(fin, flights);

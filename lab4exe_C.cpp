@@ -1,4 +1,11 @@
-// ENSF 694 - Lab 4 Exercise C
+/*
+ *  lab4exe_C.cpp
+ *  ENSF 694 Lab 4, exercise C
+ *  Created by Mahmood Moussavi
+ *  Completed by: Jack Shenfield
+ *  Development Date: July 30th, 2025
+ */
+
 #include <iostream>
 using namespace std;
 
@@ -53,7 +60,7 @@ int main(void)
     cout << "Here is your array of ints after sorting:  \n" ;
     for(i = 0; i < n_elements; i++)
         cout << a[i] << endl;
-#if 0
+#if 1
     const char* strings[] = { "Red", "Blue", "pink","apple", "almond","white",
                                                "nut", "Law", "cup"};
     
@@ -96,3 +103,33 @@ void insertion_sort(int *a, int n)
         a[j] = value_to_insert;
     }
 }
+
+void insertion_sort(const char** str_array, int n){ // same logic as above, but changed to strings.
+
+    int i;
+    int j;
+    const char* str_to_insert;
+    
+    for (i = 1; i < n; i++) {
+        str_to_insert = str_array[i];
+        
+        /* Shift values greater than value_to_insert. */
+        j = i;
+        while ( j > 0 && strlen(str_array[j - 1]) > strlen(str_to_insert)  ) {
+            str_array[j] = str_array[j - 1];
+            j--;
+        }
+        
+        str_array[j] = str_to_insert;
+    }
+}
+
+/* REQUIRES
+ *   n > 0.
+ *   Array elements str_array[0] ... str_array[n - 1] exist.
+ * PROMISES
+ *   pointers in str_array are rearranged so that strings:
+ *   str_array[0] points to a string with the smallest string (lexicographicall) ,
+ *   str_array[1] points to the second smallest string, ..., str_array[n-2] 
+ *   points to the second largest, and str_array[n-1] points to the largest string
+ */

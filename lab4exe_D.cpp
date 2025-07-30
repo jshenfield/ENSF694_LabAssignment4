@@ -1,4 +1,10 @@
-// ENSF 694 Spring 2024 lab4exe_D.cpp
+/*
+ *  lab4exe_D.cpp
+ *  ENSF 694 Lab 4, exercise D
+ *  Created by Mahmood Moussavi
+ *  Completed by: Jack Shenfield
+ *  Development Date: July 30th, 2025
+ */
 
 #include <iostream>
 #include <fstream>
@@ -50,7 +56,7 @@ int main(int argc, const char * argv[]) {
     cout << "\n\nThe values in matrix m1 are:\n\n";
     print(m1);
     
-#if 0
+#if 1
     Matrix m2 (4, 6);
     populate_matrix(m2, 6);
 

@@ -1,8 +1,16 @@
-//  ENSF 694 lab 4 Spring 2024 - Exercise B
+
 #include <iostream>
 #include <fstream>
 #include <sstream>
 #include <stdlib.h>
+
+/*
+ *  lab4exe_B.cpp
+ *  ENSF 694 Lab 4, exercise B
+ *  Created by Mahmood Moussavi
+ *  Completed by: Jack Shenfield
+ *  Development Date: July 30th, 2025
+ */
 
 const int size = 6;
 using namespace std;
@@ -50,9 +58,23 @@ void write_binary_file(City cities[], int size, char* filename){
     stream.close();
 }
 
-void print_from_binary(char* filename) {
-    /* Studnets must complete the implementaiton of this file. */
+void print_from_binary(char* filename){
 
+
+    ifstream stream(filename, ios::in | ios::binary); // same as above, but for input file stream
+    if (stream.fail()) {
+        cerr << "failed to open file: " << filename << endl;
+        exit(1);
+    }
+
+ 
+    City city;
+
+    while (stream.read(reinterpret_cast<char*>(&city), sizeof(City))) { // print all
+        cout << "City: " << city.name << ", x: " << city.x << ", y: " << city.y << endl; 
+    }
+
+    stream.close();
 }
 
 
