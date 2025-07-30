@@ -1,9 +1,14 @@
+#include <iostream>
+
 //
 //  Point.hpp
 //  Lookup Table
 //
 //  Created by Mahmood Moussavi on 2024-05-10.
 //
+
+
+
 
 #ifndef Point_h
 #define Point_h
@@ -16,6 +21,7 @@ public:
     int getx() const;
     int gety() const;
     char* get_label()const;
+    friend std::ostream& operator<<(std::ostream& os, const Point& p);
     
 private:
     int x, y;    // x and y coordinates of a point on Cartesian plain

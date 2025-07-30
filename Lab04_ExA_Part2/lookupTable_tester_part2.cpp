@@ -2,6 +2,7 @@
 #include <iostream>
 #include "lookupTable.h"
 #include <cstring>
+#include "Point.h"
 using namespace std;
 
 void run_test();
@@ -10,7 +11,7 @@ void run_test();
 
 int main()
 {
-    if(!freopen("/Users/mahmoodmoussavi/Dropbox/ENSF 694 Labs/Lab3/Lookup Table Part II/Lookup Table/Lookup Table/data-part2.txt", "r", stdin)){
+    if(!freopen("data-part2.txt", "r", stdin)){
         std::cerr << "Failed to use the input file";
         exit(1);
     }
@@ -84,9 +85,9 @@ void run_test() {
             int index;
             cin >> index >> expected_key;
             
-            int* actual_key = myList->retrieve_at(index);
+            int actual_key = myList->retrieve_at(index);
             
-            if ( *actual_key == expected_key ) {
+            if (actual_key == expected_key ) {
                 cout << " Passed" <<  endl;
             } else {
                 cout << " Failed in rettrieve_at: expected key is " << expected_key << ", not " << actual_key <<  endl;
@@ -118,7 +119,7 @@ void run_test() {
             Point p(x, y, label.c_str());
             Pair pair(key, p);
             myList->insert(pair);
-            if (*myList->retrieve_at(index) == key){
+            if (myList->retrieve_at(index) == key){
                 cout << " Passed" << endl;
             }
             else {

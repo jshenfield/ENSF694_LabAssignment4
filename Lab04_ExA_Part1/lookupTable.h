@@ -113,7 +113,7 @@ public:
     bool isEmpty()const;
     // PROMISES: returns true is list is empty
     
-    int* retrieve_at(int i);
+    int retrieve_at(int i);
     // PROMISES: returns the adress of the key at the position index. Reminder: the index
     // number for the first node in the list is 0, 2nd node is 1, 3rd node is 2 and so on.
     

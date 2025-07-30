@@ -84,9 +84,9 @@ LookupTable* run_test() {
             int index;
             cin >> index >> expected_key;
             
-            int* actual_key = myList->retrieve_at(index);
+            int actual_key = myList->retrieve_at(index);
             
-            if ( *actual_key == expected_key ) {
+            if (actual_key == expected_key ) {
                 cout << " Passed" <<  endl;
             } else {
                 cout << " Failed in rettrieve_at: expected key is " << expected_key << ", not " << actual_key <<  endl;
@@ -114,7 +114,7 @@ LookupTable* run_test() {
             getline(cin, name);
             Pair pair(key, name);
             myList->insert(pair);
-            if (*myList->retrieve_at(index) == key){
+            if (myList->retrieve_at(index) == key){
                 cout << " Passed" << endl;
             }
             else {
