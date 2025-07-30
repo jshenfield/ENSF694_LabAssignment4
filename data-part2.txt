@@ -1,0 +1,21 @@
+// STUDENTS ARE NOT SUPPOSED TO CHANGE THIS FILE
+new
+insert 0 300001 10 20 Calgary
+insert 1 700001 15 25 Edmonton
+insert 1 500002 20 30 Lethbridge
+find 300001 Calgary
+find 700001 Edmonton
+find 500002 Lethbridge
+retrieve_at 2 700001
+retrieve_at 1 500002
+size 3
+remove 700001
+size 2
+retrieve_at 0 300001
+retrieve_at 1 500002
+remove 300001
+size 1
+retrieve_at 0 500002
+remove 500002
+size 0
+isEmpty 1
